@@ -1,7 +1,7 @@
 @font-face
 {
 font-family: "Norse";
-src: local(Norse) url('../fonts/norse/Norse.otf');
+src: local(Norse) url('../fonts/norse/Norse.otf') format(otf);
 font-weight: 100;
 }
 @font-face {
@@ -10,9 +10,9 @@ font-weight: 100;
     font-weight: 700;
 };
 
-/*.brand-logo {
+.brand-logo {
     font-family: "Norse";
-} */
+} 
 
 nav {
     background-color: #241d1e;
