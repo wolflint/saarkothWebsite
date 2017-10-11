@@ -1,15 +1,3 @@
-@font-face
-{
-font-family: "Norse";
-src: local(Norse) url('../fonts/norse/Norse.otf') format(otf);
-font-weight: 100;
-}
-@font-face {
-    font-family: "Norse";
-    src: local(Norse Bold) url('../fonts/norse/Norse-Bold.otf');
-    font-weight: 700;
-};
-
 .brand-logo {
     font-family: "Norse";
 } 
