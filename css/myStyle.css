@@ -1,0 +1,20 @@
+@font-face
+{
+font-family: "Norse";
+src: local(Norse) url('../fonts/norse/Norse.otf');
+font-weight: 100;
+}
+@font-face {
+    font-family: "Norse";
+    src: local(Norse Bold) url('../fonts/norse/Norse-Bold.otf');
+    font-weight: 700;
+};
+
+/*.brand-logo {
+    font-family: "Norse";
+} */
+
+nav {
+    background-color: #241d1e;
+    font-family: "Norse";
+}
