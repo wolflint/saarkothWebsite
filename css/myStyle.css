@@ -1,24 +1,24 @@
 /* NORSE  FONT FACE */
 @font-face {
     font-family: 'Norse';
-    src: url('/fonts/norse/Norse-Bold.eot');
+    src: url('../fonts/norse/Norse-Bold.eot');
     src: local('Norse Bold'), local('Norse-Bold'),
-        url('/fonts/norse/Norse-Bold.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/norse/Norse-Bold.woff2') format('woff2'),
-        url('/fonts/norse/Norse-Bold.woff') format('woff'),
-        url('/fonts/norse/Norse-Bold.ttf') format('truetype');
+        url('../fonts/norse/Norse-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/norse/Norse-Bold.woff2') format('woff2'),
+        url('../fonts/norse/Norse-Bold.woff') format('woff'),
+        url('../fonts/norse/Norse-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Norse';
-    src: url('/fonts/norse/Norse.eot');
+    src: url('../fonts/norse/Norse.eot');
     src: local('Norse'),
-        url('/fonts/norse/Norse.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/norse/Norse.woff2') format('woff2'),
-        url('/fonts/norse/Norse.woff') format('woff'),
-        url('/fonts/norse/Norse.ttf') format('truetype');
+        url('../fonts/norse/Norse.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/norse/Norse.woff2') format('woff2'),
+        url('../fonts/norse/Norse.woff') format('woff'),
+        url('../fonts/norse/Norse.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
