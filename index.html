@@ -9,7 +9,6 @@
 
   <title>Saarkoth - Home</title>
 </head>
-
 <body>
   <nav>
     <div class="nav-wrapper">
@@ -33,11 +32,16 @@
     </div>
   </nav>
 
-  <div id="top-image"></div>
+  <div id="top-image">
+    <div class="col s12">
+      <img class="responsive-img" src="/assets/logo.png" alt="">
+    </div>
+  </div>
 
+  <script src="js/jquery.min.js"></script>
   <script>
     $(document).ready(function () {
-      var movementStrength = 25;
+      var movementStrength = 30;
       var height = movementStrength / $(window).height();
       var width = movementStrength / $(window).width();
       $("#top-image").mousemove(function (e) {
