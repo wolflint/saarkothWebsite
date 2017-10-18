@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/myStyle.css" type="text/css">
-    
-    <title>Saarkoth - Home</title>
-  </head>
-  <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo center">SAARKOTH</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="#">News</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">Music</a></li>
-            <li><a href="#">Merch</a></li>
-          </ul>
-        </div>
-      </nav>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/myStyle.css" type="text/css">
+
+  <title>Saarkoth - Home</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">SAARKOTH</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li>
+          <a href="#">News</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+      </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <a href="#">Music</a>
+        </li>
+        <li>
+          <a href="#">Merch</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="top-image"></div>
+
+  <script>
+    $(document).ready(function () {
+      var movementStrength = 25;
+      var height = movementStrength / $(window).height();
+      var width = movementStrength / $(window).width();
+      $("#top-image").mousemove(function (e) {
+        var pageX = e.pageX - ($(window).width() / 2);
+        var pageY = e.pageY - ($(window).height() / 2);
+        var newvalueX = width * pageX * -1 - 25;
+        var newvalueY = height * pageY * -1 - 50;
+        $('#top-image').css("background-position", newvalueX + "px     " + newvalueY + "px");
+      });
+    });
+  </script>
 </body>
+
 </html>
