@@ -9,6 +9,7 @@
 
   <title>Saarkoth - Home</title>
 </head>
+
 <body>
   <nav>
     <div class="nav-wrapper">
@@ -33,26 +34,24 @@
   </nav>
 
   <div id="top-image">
-    <div class="col s12">
-      <img class="responsive-img" src="/assets/logo.png" alt="">
+  </div>
+  <div class="row">
+    <div class="col s3"></div>
+    <div id="logo-img" class="col s6 parallax">
+      <!-- <img id="logo-img" class="responsive-img" src="/assets/logo.png" alt=""> -->
+    </div>
+    <div class="col s3"></div>
+    <div class="row">
+      <div class="col s3">Page 1</div>
+      <div class="col s3">Page 2</div>
+      <div class="col s3">Page 3</div>
+      <div class="col s3">Page 4</div>      
     </div>
   </div>
 
+
   <script src="js/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      var movementStrength = 30;
-      var height = movementStrength / $(window).height();
-      var width = movementStrength / $(window).width();
-      $("#top-image").mousemove(function (e) {
-        var pageX = e.pageX - ($(window).width() / 2);
-        var pageY = e.pageY - ($(window).height() / 2);
-        var newvalueX = width * pageX * -1 - 25;
-        var newvalueY = height * pageY * -1 - 50;
-        $('#top-image').css("background-position", newvalueX + "px     " + newvalueY + "px");
-      });
-    });
-  </script>
+  <script src="js/myScripts.js"></script>
 </body>
 
 </html>
