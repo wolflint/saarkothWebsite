@@ -3,17 +3,18 @@
 @import url("animate.css");
 @import url("hover-min.css");
 
+/* Nav */
 nav .brand-logo {
 font-family: "Norse";
 font-size: 4.5rem;
 } 
 
 nav .brand-logo:hover {
-color: #73DADA;
+color: rgb(115, 218, 218);
 }    
 
 nav {
-background-color: #241d1e;
+background-color: rgb(36, 29, 30);
 font-family: "Norse";
 }
 
@@ -24,67 +25,37 @@ font-size: 1.5rem;
 nav ul a:hover {
 /*background-color: rgba(0, 0, 0, 0.3);*/
 background-color: #241d1e;
-color: #73DADA;
+color: rgb(115, 218, 218);
 }
 
+/* Parallax image */
 #top-image {
-background:url("/assets/indexBg.jpeg") -25px -50px;
-position:fixed;
+background: url("/assets/indexBg.jpeg") -25px -50px;
+/* background-position: center center; */
+background-attachment: fixed;
+background-size: calc(100% + 50px);
+background-repeat: no-repeat;
 top:0;
 width:100%;
 z-index:-10;
-height:100%;
-background-size: 80%/*calc(90% + 100px)*/;
+/* height:100%; */
+
 }
 
+/* Logo image */
 #logo-img {
-margin: 0 auto;
-display: flex;
-max-width: 100%;
-opacity: 0.3;
+    max-width: 50%;
+    margin: 0 auto;
+    opacity: 0.5;
 }
 
-
-.example {
-width:640px;
-margin:0 auto;
-position:relative;
+/* Rune text */
+.runes {
+    text-align: center;
+    font-family: "Norse";
+    color: rgba(255, 255, 255, 0.6)
+    /* font-size: 5rem; */
 }
-.parallax {
-display:block;
-position:relative;
-width:360px;
-height:407px;
-margin:-40px 0 0 0;
-/*overflow:hidden;
-padding:30px;*/
-text-indent:-999px;
-background:url(/assets/logo.png) center center no-repeat;
-float:left;
-}
-.parallax:first-child {
-background-image:url(http://preview.vertic.com/vertic/labs/examples/parallaxhover/5/4-6-full.png);
-width:440px;
-height:361px;
-margin:0 -160px 0 0;
-}
-.parallax .level {
-display:block;
-position:absolute;
-width:100%;
-height:100%;
-top:0;
-left:0;
-background-position:center center;
-background-repeat:no-repeat;
-} 
-.parallax.enhanced,
-.parallax.enhanced:first-child {
-background:none;
-}
-#logo-img {
-margin: 0 auto;
-display: flex;
-max-width: 100%;
-opacity: 0.3;
+.runes:hover {
+color: rgb(115, 218, 218);
 }
