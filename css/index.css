@@ -1,6 +1,6 @@
 /* Parallax image */
 body {
-    background-image: url("/assets/indexBg.jpeg")/* -25px -50px*/;
+    background-image: url("../assets/indexBg.jpeg")/* -25px -50px*/;
     background-attachment: fixed;
     background-size: calc(100% + 100px);
     background-repeat: no-repeat;
