@@ -1,7 +1,7 @@
 body {
-    background-image: url("../assets/indexBg.jpeg")/* -25px -50px*/;
-    background-size: cover;
-    background-attachment: fixed;    
+    background-image: url("../assets/dark-triangles.png")/* -25px -50px*/;
+    background-attachment: fixed;
+    background-repeat: repeat;    
 }
 body, i, h1, h6 {
     color: rgba(255, 255, 255, 0.6);
