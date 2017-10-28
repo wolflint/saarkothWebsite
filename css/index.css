@@ -59,7 +59,7 @@ runes, h6 {
 } */
 
 @media screen and (max-width: 992px) {
-body {
+#parallax-section {
         background-size: auto calc(100% + 100px)
     }
 
