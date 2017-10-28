@@ -1,3 +1,57 @@
-html, body {
-    overflow: hidden !important;
+/* Parallax image */
+body {
+    background-image: url("/assets/indexBg.jpeg")/* -25px -50px*/;
+    background-attachment: fixed;
+    background-size: calc(100% + 100px);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    z-index:-10;
 }
+
+/* Logo image */
+#logo-img {
+    width: inherit;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.5;
+}
+
+/* Rune text */
+.runes {
+    font-family: "Norse";
+    color: rgba(255, 255, 255, 0.6);
+}
+.runes:hover {
+    color: rgb(115, 218, 218);
+}
+
+runes, h1 {
+    font-size: 5vw;
+    text-align: center;        
+}
+runes, h6 {
+    font-size: 2vw;
+    text-align: center;                
+}
+
+/*  runes, h1 {
+    font-size: 250%;
+} */
+
+@media screen and (max-width: 992px) {
+body {
+        background-size: auto calc(100% + 100px)
+    }
+
+runes, h1 {
+    font-size: 5vh;
+    text-align: center;        
+}
+runes, h6 {
+    font-size: 2vh;
+    text-align: center;                
+}
+}
+    

@@ -27,35 +27,3 @@ nav ul a:hover {
 background-color: #241d1e;
 color: rgb(115, 218, 218);
 }
-
-/* Parallax image */
-#top-image {
-background: url("/assets/indexBg.jpeg") -25px -50px;
-/* background-position: center center; */
-background-attachment: fixed;
-background-size: calc(100% + 50px);
-background-repeat: no-repeat;
-top:0;
-width:100%;
-z-index:-10;
-/* height:100%; */
-
-}
-
-/* Logo image */
-#logo-img {
-    max-width: 50%;
-    margin: 0 auto;
-    opacity: 0.5;
-}
-
-/* Rune text */
-.runes {
-    text-align: center;
-    font-family: "Norse";
-    color: rgba(255, 255, 255, 0.6)
-    /* font-size: 5rem; */
-}
-.runes:hover {
-color: rgb(115, 218, 218);
-}
