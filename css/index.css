@@ -1,13 +1,32 @@
-/* Parallax image */
 body {
     background-image: url("../assets/indexBg.jpeg")/* -25px -50px*/;
-    background-attachment: fixed;
+    background-size: cover;
+    background-attachment: fixed;    
+}
+body, i, h1, h6 {
+    color: rgba(255, 255, 255, 0.6);
+}
+/* Parallax image */
+#parallax-section {
+    background-image: url("../assets/indexBg.jpeg")/* -25px -50px*/;
     background-size: calc(100% + 100px);
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100%;
     z-index:-10;
 }
+section {
+    height: 100vh;
+    font-family: "Norse";
+}
+section:nth-child(1) {
+    
+    background-color: rgb(35, 36, 32);
+}
+section:nth-child(2) {
+    background-color: rgba(34, 34, 34, 0.7);
+}
+
 
 /* Logo image */
 #logo-img {
@@ -21,7 +40,6 @@ body {
 /* Rune text */
 .runes {
     font-family: "Norse";
-    color: rgba(255, 255, 255, 0.6);
 }
 .runes:hover {
     color: rgb(115, 218, 218);
