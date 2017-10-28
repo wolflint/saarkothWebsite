@@ -40,18 +40,24 @@ section:nth-child(2) {
 /* Rune text */
 .runes {
     font-family: "Norse";
+    color: rgba(255, 255, 255, 0.7);
 }
 .runes:hover {
-    color: rgb(115, 218, 218);
+    color: rgb(0, 174, 255);
 }
 
 runes, h1 {
+    color: inherit;
     font-size: 5vw;
     text-align: center;        
 }
 runes, h6 {
+    color: inherit;
     font-size: 2vw;
     text-align: center;                
+}
+i:hover {
+    color: rgb(255, 69, 0);
 }
 
 /*  runes, h1 {
