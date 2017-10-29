@@ -49,20 +49,32 @@ section:nth-child(2) {
 runes, h1 {
     color: inherit;
     font-size: 5vw;
-    text-align: center;        
+    text-align: center;
+    margin-bottom: 0;        
 }
 runes, h6 {
     color: inherit;
     font-size: 2vw;
-    text-align: center;                
+    text-align: center;
+    margin-top: 0;                
 }
-i:hover {
-    color: rgb(255, 69, 0);
+.arrow{
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;    
+}
+#down-arrow {
+    position: absolute;
+    bottom: 0;
 }
 
-/*  runes, h1 {
-    font-size: 250%;
-} */
+.arrow:hover{
+    color: rgb(255, 69, 0);
+}
+arrow, a, i {
+    color: inherit;
+}
 
 @media screen and (max-width: 992px) {
 #parallax-section {
