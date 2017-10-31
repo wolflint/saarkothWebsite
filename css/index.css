@@ -1,5 +1,5 @@
 body {
-    background-image: url("../assets/dark-triangles.png")/* -25px -50px*/;
+    background-image: url("../assets/curls.png")/* -25px -50px*/;
     background-attachment: fixed;
     background-repeat: repeat;    
 }
@@ -19,13 +19,13 @@ section {
     height: 100vh;
     font-family: "Norse";
 }
-section:nth-child(1) {
+/* section:nth-child(1) {
     
     background-color: rgb(35, 36, 32);
 }
 section:nth-child(2) {
     background-color: rgba(34, 34, 34, 0.7);
-}
+} */
 
 
 /* Logo image */

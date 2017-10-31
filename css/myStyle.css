@@ -7,23 +7,44 @@
 nav .brand-logo {
 font-family: "Norse";
 font-size: 4.5rem;
+opacity: 0.8;
 } 
 
 nav .brand-logo:hover {
-color: rgb(115, 218, 218);
+/* color: rgb(115, 218, 218); */
+color: rgb(0, 174, 255);
 }    
 
 nav {
 background-color: rgb(36, 29, 30);
 font-family: "Norse";
+opacity: 0.8;
 }
 
 nav ul a {
 font-size: 1.5rem;
+opacity: 0.9;
 }
 
 nav ul a:hover {
 /*background-color: rgba(0, 0, 0, 0.3);*/
 background-color: #241d1e;
-color: rgb(115, 218, 218);
+/* color: rgb(115, 218, 218); */
+color: rgb(0, 174, 255);
+}
+
+
+/* BODY */
+body {
+    background-image: url("../assets/indexBg.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* CONTAINER */
+.container {
+    background-image: url("../assets/curls.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    opacity: 0.8;
 }
