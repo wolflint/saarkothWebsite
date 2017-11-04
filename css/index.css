@@ -3,7 +3,7 @@ body {
     background-attachment: fixed;
     background-size: initial;
     background-repeat: repeat;
-    background-color: rgb(31, 35, 28);    q+q+qqqqqqqqq2-
+    background-color: rgb(31, 35, 28);
 }
 body, i, h1, h6 {
     color: rgba(255, 255, 255, 0.6);
@@ -11,7 +11,7 @@ body, i, h1, h6 {
 /* Parallax image */
 #parallax-section {
     background-image: url("../assets/indexBg.jpeg")/* -25px -50px*/;
-    background-size: calc(100% + 100px);
+    background-size: 120% auto;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -77,8 +77,8 @@ arrow, a, i {
 }
 
 @media screen and (max-width: 1065px) {
-#parallax-section {
-        background-size: auto calc(100% + 100px)
+ #parallax-section {
+        background-size: auto 120%;
     }
 
 runes, h1 {
