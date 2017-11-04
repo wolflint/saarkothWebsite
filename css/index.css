@@ -76,7 +76,7 @@ arrow, a, i {
     color: inherit;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1065px) {
 #parallax-section {
         background-size: auto calc(100% + 100px)
     }
