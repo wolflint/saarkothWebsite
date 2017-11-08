@@ -32,11 +32,21 @@ section:nth-child(2) {
 /* ========== PARALLAX SECTION ========== */
 #parallax-section {
     background-image: url("../assets/bg.jpg")/* -25px -50px*/;
-    background-size: cover  calc(100vh + 20%);
+    /* background-size: calc(100% + 75px) auto ; */
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     z-index:-10;
+}
+@media (min-aspect-ratio: 16/10) {
+    #parallax-section {
+    background-size: calc(100vw + 75px) auto;
+}
+}
+@media (max-aspect-ratio: 16/10) {
+    #parallax-section {
+        background-size: auto calc(100vh + 75px);
+    }
 }
 /* @media screen and (max-width: 1065px) {
     #parallax-section {
@@ -77,14 +87,14 @@ section:nth-child(2) {
 }
 
 @media screen and (max-width: 1065px) {
-.runes, h1 {
+/* .runes, h1 {
     font-size: 5vh;
     text-align: center;        
 }
 .runes, h6 {
     font-size: 2vh;
     text-align: center;                
-}
+} */
 #logo-img {
     width: 70vw;
     height: auto;
@@ -96,19 +106,22 @@ section:nth-child(2) {
 
 /* ========== SCROLL BUTTONS ========== */
 .scroll-button {
-    color: rgba(255, 255, 255, 0.7);
     position: absolute;
+    margin: auto;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
+    color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    width: 10%; 
+    width: auto; 
 }
-.scroll-button:hover{
+.scroll-button a:hover{
     color: rgb(255, 69, 0);
 }
-.scroll-button, a, i {
+.scroll-button a, .scroll-button i {
     color: inherit;
+    margin: inherit;
+    text-align: inherit;
+    width: auto;
 }
 /* ========== END SCROLL BUTTONS ========== */
