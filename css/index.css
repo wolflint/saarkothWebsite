@@ -32,21 +32,22 @@ section:nth-child(2) {
 /* ========== PARALLAX SECTION ========== */
 #parallax-section {
     background-image: url("../assets/bg.jpg")/* -25px -50px*/;
-    background-size: 105vw auto;
+    background-size: cover  calc(100vh + 20%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     z-index:-10;
 }
-@media screen and (max-width: 1065px) {
+/* @media screen and (max-width: 1065px) {
     #parallax-section {
            background-size: auto 120%;
        }
-    }
+    } */
 
 /* LOGO */
 #logo-img {
-    width: inherit;
+    width: auto;
+    height: 60vh;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -83,6 +84,10 @@ section:nth-child(2) {
 .runes, h6 {
     font-size: 2vh;
     text-align: center;                
+}
+#logo-img {
+    width: 70vw;
+    height: auto;
 }
 }
 /* END RUNES */

@@ -42,7 +42,7 @@
             <a class="runes" href="about.html">
               <h1>ᛋᛒᛁᚱᛁᛅ</h1>
               <h6>About</h6>
-              </a>
+            </a>
           </div>
         </div>
 
@@ -51,7 +51,7 @@
             <a class="runes" href="music.html">
               <h1>ᚼᛚᛅ</h1>
               <h6>Music</h6>
-              </a>
+            </a>
           </div>
         </div>
 
@@ -60,7 +60,7 @@
             <a class="runes" href="merchandise.html">
               <h1>ᚴᛅᚢᛒᛅ</h1>
               <h6>Merchandise</h6>
-              </a>
+            </a>
           </div>
         </div>
 
@@ -100,7 +100,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
-        
+
         <!-- SCROLL BUTTON -->
         <div class="scroll-button">
           <a href="#parallax-section" class="smooth-scroll">
@@ -118,21 +118,38 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/materialize.min.js"></script>
   <script src="js/myScripts.js"></script>
+  <!-- <script>
+    /* $(window).change(function () */
+    $(document).ready(function () {
+      var winH = $(window).height();
+      var winW = $(window).width();
+      while (true) {
+        if (winH > winW) {
+          $('#parallax-section').css("background-size", "auto 110vh");
+        }
+        else if (winW > winH) {
+          $('#parallax-section').css("background-size", "110vw auto");
+        }
+      }
+
+    });
+  </script> -->
   <!-- PARALLAX -->
   <script>
-  //Background image parralax
-$(document).ready(function () {
-  var movementStrength = 30;
-  var height = movementStrength / $(window).height();
-  var width = movementStrength / $(window).width();
-  $("#parallax-section").mousemove(function (e) {
-    var pageX = e.pageX - ($(window).width() / 2);
-    var pageY = e.pageY - ($(window).height() / 2);
-    var newvalueX = width * pageX * -1 - 25;
-    var newvalueY = height * pageY * -1 - 50;
-    $('#parallax-section').css("background-position", newvalueX + "px     " + newvalueY + "px");
-  });
-});
+    //Background image parralax
+    $(document).ready(function () {
+      
+      var movementStrength = 25;
+      var height = movementStrength / $(window).height();
+      var width = movementStrength / $(window).width();
+      $("#parallax-section").mousemove(function (e) {
+        var pageX = e.pageX - ($(window).width() / 2);
+        var pageY = e.pageY - ($(window).height() / 2);
+        var newvalueX = width * pageX * -1 - 25;
+        var newvalueY = height * pageY * -1 - 50;
+        $('#parallax-section').css("background-position", newvalueX + "px     " + newvalueY + "px");
+      });
+    });
   </script>
 
 </body>
