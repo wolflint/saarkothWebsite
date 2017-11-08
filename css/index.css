@@ -91,14 +91,14 @@ section:nth-child(2) {
 
 /* ========== SCROLL BUTTONS ========== */
 .scroll-button {
+    color: rgba(255, 255, 255, 0.7);
     position: absolute;
     bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 0;
-    margin-top: 0;
-    text-align: center; 
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    width: 10%; 
 }
 .scroll-button:hover{
     color: rgb(255, 69, 0);
