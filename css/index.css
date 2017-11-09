@@ -16,7 +16,7 @@ body, i, h1, h6 {
 }
 
 section {
-    height: 100vh;
+    min-height: 100vh;
     font-family: "Norse";
     /* position: relative; */
 }
