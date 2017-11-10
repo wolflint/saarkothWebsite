@@ -65,3 +65,10 @@ img.navbar-logo:hover {
 .page-footer {
     background-color: #212121bd;
 }
+
+#float-img {
+    width: 35%;
+    height: auto;
+    float: right;
+    padding: 20px;
+}
