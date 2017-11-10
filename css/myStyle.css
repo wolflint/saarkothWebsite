@@ -1,45 +1,67 @@
 /* CSS sheets */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("materialize.min.css");
 @import url("animate.css");
 @import url("hover-min.css");
 
-/* NAVBAR */
-@media screen and (min-width: 993px) {
-    nav {
-        opacity: 0.8;
-    }
+/* ELEMENTS */
+html {
+    font-family: "Norse";
+    color: white;
 }
-
-nav {
-background-color: rgb(36, 29, 30);
-font-family: "Norse";
-text-align: center;
-}
-
-nav ul a {
-font-size: 1.5rem;
-opacity: 0.9;
-}
-
-nav ul a:hover {
-background-color: #241d1e;
-color: rgb(30, 188, 209);;
-}
-
-/* BRAND LOGO */
-nav .brand-logo {
-font-family: "Norse";
-font-size: 4.5rem;
-opacity: 0.8;
-} 
-
-nav .brand-logo:hover {
-color: rgb(30, 188, 209);;
-}
-
-/* BODY */
 body {
     background-image: url(../assets/bg.jpg);
     background-attachment: fixed;
     background-size: cover;
+}
+main {
+    background-color: #00000069;
+    padding: 15px;
+}
+
+
+{
+    background-color: #00000070
+}
+/* END ELEMENTS */
+
+nav {
+background-color: #212121bd;
+font-family: "Norse";
+text-align: center;
+}
+
+.side-nav {
+    background-color: #212121;
+}
+a.side-nav {
+    color: #fff;
+}
+nav ul li.active {
+    background-color: #212121;
+}
+
+nav ul a {
+font-size: 1.5rem;
+
+}
+
+nav ul a:hover {
+background-color: #212121;
+color: rgb(30, 188, 209);;
+}
+
+img.navbar-logo {
+    height: 64px;
+    padding-top: 1vh;
+    object-fit: contain;
+}
+img.navbar-logo:hover {
+    border-bottom: medium rgb(30, 188, 209);
+}
+
+
+/* TESTING AREA */
+.page-footer {
+    background-color: #212121bd;
 }

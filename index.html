@@ -5,12 +5,145 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/myStyle.css" type="text/css">
-  <link rel="stylesheet" href="css/index.css">
 
   <title>Saarkoth - Home</title>
 </head>
+<style>
+  /* ========== ELEMENTS ========== */
+
+  body,
+  html {
+    background-color: rgb(131, 163, 172);
+
+  }
+
+  body {
+    background-image: none;
+    background-attachment: fixed;
+    background-size: initial;
+    background-repeat: repeat;
+  }
+
+  body,
+  i,
+  h1,
+  h6 {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  section {
+    min-height: 100vh;
+    font-family: "Norse";
+  }
+
+  section:nth-child(2) {
+    background-color: rgba(34, 34, 34, 0.7);
+    background-image: url("../assets/curls.png");
+    text-align: center;
+    position: relative;
+  }
+
+  /* ========== END ELEMENTS ========== */
+
+  /* ========== PARALLAX SECTION ========== */
+
+  #parallax-section {
+    background-image: url("../assets/bg.jpg")/* -25px -50px*/
+    ;
+    /* background-size: calc(100% + 75px) auto ; */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -10;
+  }
+
+  @media (min-aspect-ratio: 16/10) {
+    #parallax-section {
+      background-size: calc(100vw + 75px) auto;
+    }
+  }
+
+  @media (max-aspect-ratio: 16/10) {
+    #parallax-section {
+      background-size: auto calc(100vh + 75px);
+    }
+  }
+
+  /* LOGO */
+  #logo-img {
+    width: auto;
+    height: 60vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.5;
+  }
+
+  /* RUNES */
+  .runes {
+    font-family: "Norse";
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .runes:hover {
+    color: rgb(30, 188, 209);
+  }
+
+  .runes,
+  h1 {
+    color: inherit;
+    font-size: 5vw;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .runes,
+  h6 {
+    color: inherit;
+    font-size: 2vw;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 1065px) {
+    #logo-img {
+      width: 70vw;
+      height: auto;
+    }
+  }
+
+  /* END RUNES */
+
+  /* ========== END PARALLAX SECTION ========== */
+
+  /* ========== SCROLL BUTTONS ========== */
+
+  .scroll-button {
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    width: auto;
+  }
+
+  .scroll-button a:hover {
+    color: rgb(255, 69, 0);
+  }
+
+  .scroll-button a,
+  .scroll-button i {
+    color: inherit;
+    margin: inherit;
+    text-align: inherit;
+    width: auto;
+  }
+
+  /* ========== END SCROLL BUTTONS ========== */
+</style>
 
 <body>
 
@@ -138,7 +271,7 @@
   <script>
     //Background image parralax
     $(document).ready(function () {
-      
+
       var movementStrength = 25;
       var height = movementStrength / $(window).height();
       var width = movementStrength / $(window).width();
