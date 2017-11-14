@@ -20,10 +20,6 @@ main {
     padding: 15px;
 }
 
-
-{
-    background-color: #00000070
-}
 /* END ELEMENTS */
 
 nav {
@@ -44,6 +40,9 @@ a.side-nav {
 nav ul li.active {
     background-color: #212121;
 }
+nav ul li.active > a {
+    color: rgb(30, 188, 209);
+}
 
 nav ul a {
 font-size: 1.5rem;
@@ -52,7 +51,7 @@ font-size: 1.5rem;
 
 nav ul a:hover {
 background-color: #212121;
-color: rgb(30, 188, 209);;
+color: rgb(30, 188, 209);
 }
 
 img.navbar-logo {
@@ -95,4 +94,11 @@ i.footer-social {
 #bc:hover {
     background: #639AA9;
     color: white;        
+}
+
+.shopping {
+    padding: 0 15px;
+}
+a.shopping > i:hover{
+    color: orangered;
 }
