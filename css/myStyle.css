@@ -85,19 +85,20 @@ i.footer-social {
 }
 #tw:hover {
     background: #5AA3BF;
-    color: white;    
+    color: white;
 }
 #sc:hover {
     background: #FF5500;
-    color: white;    
+    color: white;
 }
 #bc:hover {
     background: #639AA9;
-    color: white;        
+    color: white;
 }
 
-.shopping {
-    padding: 0 15px;
+.shopping, i.shopping {
+    margin: 0 15px;
+    color: white;
 }
 a.shopping > i:hover{
     color: orangered;
