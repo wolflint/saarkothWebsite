@@ -6,155 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="css/myStyle.css" type="text/css">
+	<link rel="stylesheet" href="css/index.css" type="text/css">
 
 	<title>Saarkoth - Home</title>
 </head>
-<style>
-	/* ========== ELEMENTS ========== */
-
-	body,
-	html {
-		background-color: rgb(131, 163, 172);
-
-	}
-
-	body {
-		background-image: none;
-		background-attachment: fixed;
-		background-size: initial;
-		background-repeat: repeat;
-		background-image: url("assets/curls.png");
-	}
-
-	body,
-	i,
-	h1,
-	h6 {
-		color: rgba(255, 255, 255, 0.6);
-	}
-
-	main {
-		padding: 0;
-	}
-
-	section {
-		min-height: 100vh;
-		font-family: "Norse";
-		padding: 0;
-	}
-
-	section:nth-child(2) {
-		text-align: center;
-		position: relative;
-		min-height: 84vh;
-	}
-
-	/* ========== END ELEMENTS ========== */
-
-	/* ========== PARALLAX SECTION ========== */
-
-	#parallax-section {
-		background-image: url("assets/bg.jpg")/* -25px -50px*/
-		;
-		/* background-size: calc(100% + 75px) auto ; */
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-position: center;
-		z-index: -10;
-	}
-
-	@media (min-aspect-ratio: 16/10) {
-		#parallax-section {
-			background-size: calc(100vw + 30px) auto;
-		}
-	}
-
-	@media (max-aspect-ratio: 16/10) {
-		#parallax-section {
-			background-size: auto calc(100vh + 30px);
-		}
-	}
-
-	/* LOGO */
-
-	#logo-img {
-		width: auto;
-		height: 60vh;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		opacity: 0.5;
-	}
-
-	/* RUNES */
-
-	.runes {
-		font-family: "Norse";
-		color: rgba(255, 255, 255, 0.7);
-	}
-
-	.runes:hover {
-		color: rgb(30, 188, 209);
-	}
-
-	.runes,
-	h1 {
-		color: inherit;
-		font-size: 5vw;
-		text-align: center;
-		margin-bottom: 0;
-	}
-
-	.runes,
-	h6 {
-		color: inherit;
-		font-size: 2vw;
-		text-align: center;
-		margin-top: 0;
-	}
-
-	@media screen and (max-width: 1065px) {
-		#logo-img {
-			width: 70vw;
-			height: auto;
-		}
-	}
-
-	/* END RUNES */
-
-	/* ========== END PARALLAX SECTION ========== */
-
-	/* ========== SCROLL BUTTONS ========== */
-
-	.scroll-button {
-		position: absolute;
-		margin: auto;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		color: rgba(255, 255, 255, 0.7);
-		text-align: center;
-		width: auto;
-	}
-
-	.scroll-button a:hover {
-		color: rgb(255, 69, 0);
-	}
-
-	.scroll-button a,
-	.scroll-button i {
-		color: inherit;
-		margin: inherit;
-		text-align: inherit;
-		width: auto;
-	}
-
-	/* ========== END SCROLL BUTTONS ========== */
-</style>
 
 <body>
 	<main>
-
 		<section id="parallax-section">
 			<div class="row">
 				<!-- Logo image -->
@@ -292,44 +150,10 @@
 	</footer>
 	<!-- END FOOTER -->
 
-
-	<!-- Scripts -->
+	<!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/materialize.min.js"></script>
 	<script src="js/myScripts.js"></script>
-	<!-- <script>
-    /* $(window).change(function () */
-    $(document).ready(function () {
-      var winH = $(window).height();
-      var winW = $(window).width();
-      while (true) {
-        if (winH > winW) {
-          $('#parallax-section').css("background-size", "auto 110vh");
-        }
-        else if (winW > winH) {
-          $('#parallax-section').css("background-size", "110vw auto");
-        }
-      }
-
-    });
-  </script> -->
-	<!-- PARALLAX -->
-	<script>
-		//Background image parralax
-		$(document).ready(function() {
-
-			var movementStrength = 25;
-			var height = movementStrength / $(window).height();
-			var width = movementStrength / $(window).width();
-			$("#parallax-section").mousemove(function(e) {
-				var pageX = e.pageX - ($(window).width() / 2);
-				var pageY = e.pageY - ($(window).height() / 2);
-				var newvalueX = width * pageX * -1 - 25;
-				var newvalueY = height * pageY * -1 - 50;
-				$('#parallax-section').css("background-position", newvalueX + "px     " + newvalueY + "px");
-			});
-		});
-	</script>
 
 </body>
 
