@@ -27,7 +27,7 @@ $(document).ready(function () {
 // MOBILE COLLAPSIBLE MENU
 $(".button-collapse").sideNav({
   menuWidth: 250,
-  edge: 'right', 
+  edge: 'right',
   closeOnClick: true,
   draggable: true,
 });
@@ -55,3 +55,8 @@ function animationHover(element, animation) {
       }, 2000);
     });
 }
+
+// Material Box - IMAGES
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
