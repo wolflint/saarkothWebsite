@@ -111,3 +111,13 @@ a.shopping > i:hover{
 /* END SHOP SECTIONS*/
 
 /* TESTING AREA */
+h4.news-subhead{
+	color: darkgrey;
+	padding-top: 5px;
+	margin: auto;
+	/*text-align: right;*/
+}
+h1.news-subhead{
+	padding-bottom: 0;
+	margin: 0;
+}
