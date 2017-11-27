@@ -11,9 +11,11 @@ html {
     color: white;
 }
 body {
-    background-image: url(../assets/bg.jpg);
-    background-attachment: fixed;
-    background-size: cover;
+    /*background-image: url(../assets/bg.jpg);*/
+    /*background-attachment: fixed;*/
+    /*background-size: cover;*/
+		background-image: url(../assets/curls.png);
+		background-repeat: repeat;
 }
 main {
     background-color: #00000069;
@@ -129,4 +131,9 @@ background-image: url(../assets/about.jpg);
 background-repeat: no-repeat;
 background-size: cover;
 background-position: bottom;
+}
+
+.article-news {
+	background-color: #212121bd;
+	padding: 10px;
 }
