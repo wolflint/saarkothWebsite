@@ -134,6 +134,13 @@ background-position: bottom;
 }
 
 .article-news {
-	background-color: #212121bd;
-	padding: 10px;
+	background-color: #ffffff09;
+    /* padding: 10px; */
+    height: 100%;
+    /* white-space: nowrap; */
+}
+
+.article-content {
+    padding: 10px;
+    position: relative;
 }
