@@ -37,6 +37,10 @@ section:nth-child(2) {
 	min-height: 84vh;
 }
 
+th {
+    font-weight: bold;
+}
+
 /* ========== END ELEMENTS ========== */
 
 /* ========== PARALLAX SECTION ========== */

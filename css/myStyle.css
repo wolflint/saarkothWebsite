@@ -2,8 +2,6 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @import url("materialize.min.css");
-@import url("animate.css");
-@import url("hover-min.css");
 @import url("font-awesome.css");
 
 /*NORSE FONTS*/
@@ -138,62 +136,7 @@ a.shopping > i:hover{
     color: orangered;
 }
 
-
-/* END SHOP SECTIONS*/
-
-/* TESTING AREA */
-h4.news-subhead{
-	color: darkgrey;
-	padding-top: 5px;
-	margin: auto;
-	/*text-align: right;*/
-}
-h1.news-subhead{
-	padding-bottom: 0;
-	margin: 0;
-}
-
-.test {
-width: 100%;
-height: auto;
-background-image: url(../assets/about.jpg);
-background-repeat: no-repeat;
-background-size: cover;
-background-position: bottom;
-}
-
-.article-news {
-	background-color: #ffffff09;
-    /* padding: 10px; */
-    height: 100%;
-    /* white-space: nowrap; */
-}
-
-.article-content {
-    border-style: double;
-    border-color: white;
-    border-left: none;
-    border-right: none;
-}
-
-.content-img {
-    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1),0 0 0 1px rgba(10, 10, 10, 0.1);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    width: 100%;
-}
-
-.tinfo {
-    padding-top: 50px;
-    padding-bottom: 30px;
-}
-
-th {
-    font-weight: bold;
-}
-
 .card {
     background-color: rgba(255, 255, 255, 0.034);
 }
+/* END SHOP SECTIONS*/

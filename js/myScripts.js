@@ -31,32 +31,8 @@ $(".button-collapse").sideNav({
   closeOnClick: true,
   draggable: true,
 });
-// Initialize collapsible (uncomment the line below if you use the dropdown variation)
-//$('.collapsible').collapsible();
 
-
-
-
-/* animationHover('#rune2', 'swing');
-animationHover('#rune3', 'swing');
-animationHover('#rune4', 'swing');
-animationHover('#rune1', 'swing'); */
-
-function animationHover(element, animation) {
-  element = $(element);
-  element.hover(
-    function () {
-      element.addClass('animated ' + animation);
-    },
-    function () {
-      //wait for animation to finish before removing classes
-      window.setTimeout(function () {
-        element.removeClass('animated ' + animation);
-      }, 2000);
-    });
-}
-
-// Material Box - IMAGES
+// MATERIALBOXED IMAGES
   $(document).ready(function(){
     $('.materialboxed').materialbox();
   });
