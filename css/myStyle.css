@@ -58,6 +58,11 @@ font-family: "Norse";
 text-align: center;
 }
 
+nav .brand-logo.center {
+    font-weight: bold;
+    font-size: 4rem;
+}
+
 .side-nav {
     background-color: rgba(33, 33, 33, 0.945);
 }
