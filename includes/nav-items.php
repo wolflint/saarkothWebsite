@@ -1,21 +1,21 @@
-<?php 
+<?php
 
     $navItems = array(
                     array(
-                        slug => "news.php",
-                        title => "News"
+                        'slug' => "news.php",
+                        'title' => "News"
                     ),
                     array(
-                        slug => "about.php",
-                        title => "About"
+                        'slug' => "about.php",
+                        'title' => "About"
                     ),
                     array(
-                        slug => "music.php",
-                        title => "Music"
+                        'slug' => "music.php",
+                        'title' => "Music"
                     ),
                     array(
-                        slug => "merch.php",
-                        title => "Merch"
+                        'slug' => "merch.php",
+                        'title' => "Merch"
                     ),
                     );
 
