@@ -110,29 +110,9 @@
 			<!-- SPACE FOR FACEBOOK -->
 			<div class="col m5 hide-on-small-only">
 				<h1 class="center-align">Facebook Feed</h1>
-				<?php
-				//Set your App ID and App Secret.
-$appID = '1771452986218636';
-$appSecret = '24f7b998678f445f1532dbc69aa7cd20';
+				<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsaarkoth&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1771452986218636" width="500" height="800" style="border:none;overflow:hidden" scrolling="yes
 
-//Create an access token using the APP ID and APP Secret.
-$accessToken = $appID . '|' . $appSecret;
-
-//The ID of the Facebook page in question.
-$id = 'saarkoth';
-
-//Tie it all together to construct the URL
-$url = "https://graph.facebook.com/$id/posts?access_token=$accessToken";
-
-//Make the API call
-$result = file_get_contents($url);
-
-//Decode the JSON result.
-$decoded = json_decode($result, true);
-
-//Dump it out onto the page so that we can take a look at the structure of the data.
-var_dump($decoded);
-				 ?>
+				" frameborder="0" allowTransparency="true"></iframe>
 			</div>
 		</div>
 

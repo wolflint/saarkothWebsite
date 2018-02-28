@@ -39,20 +39,29 @@
 				<div class="col s12 m12">
 					<h1 class="center">Members</h1>
 				</div>
-				<div class="col m4">
+
+				<div class="col m3">
 					<img class="responsive-img center materialboxed" width="500" src="./assets/about/lewis.jpg" alt="">
 					<h4 class="center names">Lewis Baker</h4>
 					<p class="center">Lead Guitar</p>
 				</div>
-				<div class="col m4">
+
+				<div class="col m3">
 					<img class="responsive-img center materialboxed" width="500" src="./assets/about/ellis.jpg" alt="">
 					<h4 class="center names">Ellis Arnott</h4>
 					<p class="center">Rhythm Guitar / Vocals</p>
 				</div>
-				<div class="col m4">
+
+				<div class="col m3">
 					<img class="responsive-img center materialboxed" width="500" src="./assets/about/asa.jpg" alt="">
 					<h4 class="center names">Asa Jones</h4>
 					<p class="center">Bass / Vocals</p>
+				</div>
+
+				<div class="col m3">
+					<img class="responsive-img center materialboxed" width="500" src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/24058837_2000279106908332_6582603545707143471_n.jpg?oh=07e6852818806a5ad66e8c39c86aaadf&oe=5B14C96B" alt="">
+					<h4 class="center names">Daryl Payne</h4>
+					<p class="center">Drums</p>
 				</div>
 
 		</section>
