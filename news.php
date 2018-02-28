@@ -41,6 +41,16 @@
 </style>
 
 <body>
+	<!-- FACEBOOK SDK -->
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12&appId=1771452986218636&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 	<!-- HEADER -->
 	<?php include('includes/header.php') ?>
 	<!-- END HEADER -->
@@ -108,12 +118,27 @@
 				</div>
 			</div>
 			<!-- SPACE FOR FACEBOOK -->
-			<div class="col m5 hide-on-small-only">
-				<h1 class="center-align">Facebook Feed</h1>
-				<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsaarkoth&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1771452986218636" width="500" height="800" style="border:none;overflow:hidden" scrolling="yes
+			<!-- <div class="col m5 hide-on-small-only"> -->
+				<!-- <h1 class="center-align">Facebook Feed</h1> -->
+				<div>
+					<h1 class="center-align">Facebook Feed</h1>
+					<div class="fb-page" data-href="https://www.facebook.com/saarkoth" data-tabs="timeline" data-height="500" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/saarkoth" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/saarkoth">Saarkoth</a></blockquote></div>
+				</div>
+			<!-- </div> -->
+			<style>
 
-				" frameborder="0" allowTransparency="true"></iframe>
-			</div>
+			html {
+				min-height: 100%;
+			}
+			body {
+				min-height: 100%;
+			}
+	.fb-page {
+		min-height: 100%;
+		min-width: 100%;
+		position: absolute;
+	}
+</style>
 		</div>
 
 	</main>
