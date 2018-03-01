@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <header>
     <!-- NAVIGATION -->
     <nav>
@@ -15,8 +18,8 @@
             </ul>
             <!-- RIGHT OF BRAND-LOGO -->
             <ul class="right hide-on-med-and-down">
-                <!-- INSERT LOGIN BUTTONS -->
-                <li><a class="waves-effect waves-light btn modal-trigger" href="#login">Login</a></li>
+                <li><a href="login.php">Log in</a></li>
+                <li><a href="signup.php">Sign up</a></li>
             </ul>
 
             <!-- MOBILE NAV-MENU -->
@@ -26,17 +29,6 @@
 
         </div>
     </nav>
-
-    <!-- MODAL -->
-    <div id="login" class="modal">
-        <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div>
-    </div>
 
     <script type="text/javascript">
         $(document).ready(function() {
