@@ -1,48 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Saarkoth - News</title>
-	<link rel="stylesheet" href="css/myStyle.css" type="text/css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="icon" href="./assets/favicon.png">
-</head>
-
-<style>
-	.article-news {
-		background-color: rgba(255, 255, 255, 0.035);
-		height: 100%;
-	}
-
-	.article-content {
-		border-style: double;
-		border-color: rgb(255, 255, 255);
-		border-left: none;
-		border-right: none;
-		border-bottom: none;
-	}
-
-	.content-img {
-		box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		border-radius: 10px;
-		width: 100%;
-	}
-
-	.tinfo {
-		padding-top: 50px;
-		padding-bottom: 30px;
-	}
-</style>
-
-<body>
-	<!-- FACEBOOK SDK -->
-	<div id="fb-root"></div>
+<?php
+	$pageTitle = "Saarkoth - News";
+	include_once 'includes/header.php'; 
+	?>
+		<!-- FACEBOOK SDK -->
+		<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -50,10 +11,6 @@
   js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12&appId=1771452986218636&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
-	<!-- HEADER -->
-	<?php include('includes/header.php') ?>
-	<!-- END HEADER -->
 
 	<!-- SECTIONS -->
 	<main class="container article-news">
