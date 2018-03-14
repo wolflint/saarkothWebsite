@@ -2,7 +2,8 @@
 
 <main class="container">
 <?php
-$sql = "SELECT * FROM users;";
+$seshID = $_SESSION['u_id'];
+$sql = "SELECT * FROM users WHERE user_id=$seshID;";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 
@@ -17,9 +18,8 @@ if ($resultCheck > 0) {
     $u_city = $row['user_city'];
     $u_postcode = $row['user_postcode'];  }
 }
-
-
 ?>
+
   <div class="row center-align">
     <h2>User ID: <em><?php echo $u_id; ?></em></h2>
     <h2>First name: <em><?php echo $u_first; ?></em></h2>
