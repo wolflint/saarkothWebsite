@@ -29,12 +29,17 @@ if ($resultCheck > 0) {
     <h2>Address: <em><?php echo $u_address; ?></em></h2>
     <h2>City: <em><?php echo $u_city; ?></em></h2>
     <h2>Post Code: <em><?php echo $u_postcode; ?></em></h2>
-
   </div>
 
   <div class="row">
     <a href="editAccount.php">
       <button type="submit" name="submit" class="btn waves-effect waves-light right">Edit<i class="material-icons right">send</i></button>
+    </a>
+  </div>
+
+  <div class="row">
+    <a href="editPassword.php">
+      <button type="submit" name="submit" class="btn waves-effect waves-light right">Change Password<i class="material-icons right">send</i></button>
     </a>
   </div>
 

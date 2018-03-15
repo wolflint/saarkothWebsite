@@ -4,11 +4,11 @@ session_start();
 
 if (isset($_POST['submit'])) {
 
-    include 'dbh.inc.php';
+    include_once 'dbh.inc.php';
 
     $uid = mysqli_real_escape_string($conn, $_POST['uid']);
     $pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
-    
+
     //Error handlers
     //Check if inputs are empty
     if (empty($uid) || empty($pwd)) {
