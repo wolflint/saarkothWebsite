@@ -6,7 +6,7 @@
 if (isset($_SESSION['u_uid'])) {
 	if ($_SESSION['u_uid'] == 'admin') {
 		echo "<a class=\"right\" href=\"newPost.php\">New Post</a>";
-	} 
+	}
 }
 ?>
 </main>
