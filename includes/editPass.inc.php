@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']) && isset($_SESSION['u_id'])) {
     include_once 'dbh.inc.php';
 
     $old_pass = mysqli_real_escape_string($conn, $_POST['old_pass']);

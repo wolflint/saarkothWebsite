@@ -1,9 +1,9 @@
 <?php
 session_start();
-include_once 'dbh.inc.php';
-
 
 if (isset($_POST['submit']) && isset($_SESSION['u_uid']) && $_SESSION['u_uid'] == 'admin') {
+    include_once 'dbh.inc.php';
+    
     $seshID = $_SESSION['u_id'];
     // Text variables
     $title = $_POST['p_title'];
@@ -31,19 +31,15 @@ if (isset($_POST['submit']) && isset($_SESSION['u_uid']) && $_SESSION['u_uid'] =
                 move_uploaded_file($fileTmpName, $fileDestination);
                 // header("Location: ../newPost.php?uploadsuccess");
                 // echo "success?";
-                if (isset($_SESSION['u_uid'])) {
-                    if ($_SESSION['u_uid'] == 'admin') {
-                        $sql = "INSERT INTO news (title, image, content, users_user_id, post_date) VALUES ('$title', '$fileDestination', '$content', (SELECT user_id FROM users WHERE user_uid = 'admin'), NOW());";
-                        $result = mysqli_query($conn, $sql);
+                $sql = "INSERT INTO news (title, image, content, users_user_id, post_date) VALUES ('$title', '$fileDestination', '$content', (SELECT user_id FROM users WHERE user_uid = 'admin'), NOW());";
+                $result = mysqli_query($conn, $sql);
 
-                        if ($result === true) {
-                            header("Location: ../newPost.php?=postsuccess");
-                            exit();
-                        } else {
-                            echo "You're a failure!";
-                            exit();
-                        }
-                    }
+                if ($result === true) {
+                    header("Location: ../newPost.php?=postsuccess");
+                    exit();
+                } else {
+                    echo "You're a failure!";
+                    exit();
                 }
             } else {
                 echo "Your file is too big.";
@@ -57,5 +53,7 @@ if (isset($_POST['submit']) && isset($_SESSION['u_uid']) && $_SESSION['u_uid'] =
         echo "You cannot upload files of this type.";
         exit();
     }
+} else {
+    header("Location: ../newPost.php?nopermission");
+    exit();
 }
-exit();

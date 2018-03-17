@@ -1,8 +1,8 @@
 <?php
-include_once 'dbh.inc.php';
 session_start();
+if (isset($_POST['submit']) && isset($_SESSION['u_id'])) {
+    include_once 'dbh.inc.php';
 
-if (isset($_POST['submit'])) {
     $seshID = $_SESSION['u_id'];
     $first = mysqli_real_escape_string($conn, $_POST['first']);
     $last = mysqli_real_escape_string($conn, $_POST['last']);
@@ -24,5 +24,8 @@ if (isset($_POST['submit'])) {
         header("Location: ../account.php?edit=error");
         exit();
     }
+} else {
+    header("Location: ../account.php?error");
+    exit();
 }
 ?>
