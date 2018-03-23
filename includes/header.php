@@ -12,7 +12,6 @@ session_start();
         <?php echo $pageTitle; ?>
     </title>
     <link rel="stylesheet" href="css/myStyle.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="icon" href="./assets/favicon.png">
 </head>
 

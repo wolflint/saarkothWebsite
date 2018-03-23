@@ -29,9 +29,10 @@ if (isset($_POST['submit']) && isset($_SESSION['u_uid']) && $_SESSION['u_uid'] =
                 $fileNameNew = uniqid('', true).".".$fileActualExt;
                 $fileDestination = '../assets/news/'.$fileNameNew;
                 move_uploaded_file($fileTmpName, $fileDestination);
+                $fileDestination = 'assets/news/'.$fileNameNew;
                 // header("Location: ../newPost.php?uploadsuccess");
                 // echo "success?";
-                $sql = "INSERT INTO news (title, image, content, users_user_id, post_date) VALUES ('$title', '$fileDestination', '$content', (SELECT user_id FROM users WHERE user_uid = 'admin'), NOW());";
+                $sql = "INSERT INTO news (title, image, content, users_user_id, post_date) VALUES ('$title', '$fileDestination', '$content', (SELECT user_id FROM users WHERE user_uid = 'admin'), NOW())";
                 $result = mysqli_query($conn, $sql);
 
                 if ($result = true) {
