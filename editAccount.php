@@ -1,6 +1,6 @@
 <?php $pageTitle = "Saarkoth - Account"; include_once 'includes/header.php'; include_once 'includes/dbh.inc.php';
 $seshID = $_SESSION['u_id'];
-$sql = "SELECT * FROM users WHERE user_id=$seshID;";
+$sql = "SELECT * FROM users WHERE user_id=$seshID";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 

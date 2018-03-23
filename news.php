@@ -31,7 +31,7 @@
 						if (isset($_SESSION['u_uid']) && $_SESSION['u_uid'] == 'admin') {
 							$edit = "
 							<a class=\"btn\" href=\"includes/d_news.inc.php?pid=$p_id\">Delete</a>
-							<a class=\"btn\" href=\"includes/e_news.inc.php?pid=$p_id\">Edit</a>
+							<a class=\"btn\" href=\"e_news.php?pid=$p_id\">Edit</a>
 							";
 						} else {
 							$edit ="";
@@ -56,10 +56,6 @@
 				} else {
 					echo "No posts found";
 				}
-
-			$test = "<img src=\"assets/logo.png\" alt=\"\">";
-			$fixed = htmlspecialchars($test);
-			echo $fixed;
 			?>
 		</div>
 	</div>
