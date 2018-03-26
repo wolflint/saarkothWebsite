@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_POST['submit']) && isset($_SESSION['u_uid']) && $_SESSION['u_uid'] == 'admin') {
+if (isset($_POST['submit']) && isset($_SESSION['u_uid']) && $_SESSION['u_admin'] > 0) {
     include_once 'dbh.inc.php';
 
     $seshID = $_SESSION['u_id'];
@@ -32,7 +32,7 @@ if (isset($_POST['submit']) && isset($_SESSION['u_uid']) && $_SESSION['u_uid'] =
                 $fileDestination = 'assets/news/'.$fileNameNew;
                 // header("Location: ../newPost.php?uploadsuccess");
                 // echo "success?";
-                $sql = "INSERT INTO news (title, image, content, users_user_id, post_date) VALUES ('$title', '$fileDestination', '$content', (SELECT user_id FROM users WHERE user_uid = 'admin'), NOW())";
+                $sql = "INSERT INTO news (title, image, content, users_user_id, post_date) VALUES ('$title', '$fileDestination', '$content', '$seshID', NOW())";
                 $result = mysqli_query($conn, $sql);
 
                 if ($result = true) {

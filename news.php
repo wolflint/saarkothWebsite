@@ -4,14 +4,14 @@
 <main class="container">
 	<div class="row">
 			<?php
-			if (isset($_SESSION['u_uid']) && $_SESSION['u_uid'] == 'admin') {
+			if (isset($_SESSION['u_uid']) && $_SESSION['u_admin'] > 0) {
 				echo "<a class=\"btn right\" href=\"newPost.php\">New Post</a>";
 			}
 			?>
 			<div class="col m8 offset-m2">
 			<?php
 
-				$sql = "SELECT * FROM news ORDER BY post_id DESC";
+				$sql = "SELECT * FROM news INNER JOIN users ON news.users_user_id=users.user_id ORDER BY post_id DESC";
 				$result = mysqli_query($conn, $sql);
 				$resultCheck = mysqli_num_rows($result);
 
@@ -25,10 +25,10 @@
 						$p_content = htmlspecialchars($row['content']);
 						$p_content = nl2br($p_content);
 						$p_content = '<p>' . preg_replace('#(<br />[\r\n]+){2}#', '</p><p>', $p_content) . '</p>';
-						$p_user = $row['users_user_id'];
+						$p_user = $row['user_uid'];
 						$p_date = $row['post_date'];
 
-						if (isset($_SESSION['u_uid']) && $_SESSION['u_uid'] == 'admin') {
+						if (isset($_SESSION['u_uid']) && $_SESSION['u_admin'] > 0) {
 							$edit = "
 							<a class=\"btn\" href=\"includes/d_news.inc.php?pid=$p_id\">Delete</a>
 							<a class=\"btn\" href=\"e_news.php?pid=$p_id\">Edit</a>
@@ -46,8 +46,9 @@
 										</div>
 										<div class=\"col m4 right\">
 											<h5 class=\"right-align\">$p_date</h5>
+											<h5 class=\"right-align\">$p_user</h5>
 										</div>
-										<img class=\"materialboxed\" style=\"max-width:100%\" src=\"$p_img\" alt=\"\">
+										<img class=\"materialboxed responsive-img\" src=\"$p_img\" alt=\"\">
 										<div>$p_content</div>
 										$edit
 									</div>";

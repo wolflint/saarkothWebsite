@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_POST['submit']) && isset($_SESSION['u_id'])) {
-    if ($_SESSION['u_uid'] == 'admin') {
+    if ($_SESSION['u_admin'] > 0) {
         include_once 'dbh.inc.php';
 
         $p_id = mysqli_real_escape_string($conn, $_POST['p_id']);

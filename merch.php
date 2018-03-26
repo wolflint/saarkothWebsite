@@ -88,7 +88,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 				 		<div class="center-align">
 				 			<img src="assets/merch/<?php echo $product['product_id']; ?>.png" class="responsive-img" />
 				 			<h4 class="text-info"><?php echo $product['product_name']; ?></h4>
-				 			<h4>£ <?php echo $product['product_price']; ?></h4>
+				 			<h4>£ <?php echo number_format($product['product_price'], 2); ?></h4>
 							<p class="range-field"><input name="quantity" type="range" id="test5" min="0" max="10" value="1" /></p>
 				 			<input type="hidden" name="name" value="<?php echo $product['product_name']; ?>" />
 				 			<input type="hidden" name="price" value="<?php echo $product['product_price']; ?>" />
@@ -128,8 +128,8 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 									 <tr>
 										 <td><?php echo $product['name']; ?></td>
 										 <td><?php echo $product['quantity']; ?></td>
-										 <td>£ <?php echo $product['price']; ?></td>
-										 <td>£ <?php echo number_format($product['quantity'] * $product['price']), 2; ?></td>
+										 <td>£ <?php echo number_format($product['price'], 2); ?></td>
+										 <td>£ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>
 										 <td>
 											 <a class="btn red darken-4" href="merch.php?action=delete&id=<?php echo $product['id']; ?>">
 												 Remove
@@ -151,7 +151,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 										if (isset($_SESSION['shopping_cart'])){
 											if(count($_SESSION['shopping_cart']) > 0){
 											 ?>
-											 <a href="#" class="btn blue">Checkout</a>
+											 <a href="checkout.php" class="btn blue">Checkout</a>
 								 <?php } } ?>
 								</td>
 							  </tr>

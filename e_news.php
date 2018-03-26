@@ -1,7 +1,7 @@
 <?php
 $pageTitle = "Saarkoth - Edit Article"; include_once 'includes/header.php';
 
-if ($_SESSION['u_uid'] != 'admin') {
+if ($_SESSION['u_admin'] < 1) {
     header("Location: news.php?error=nopermission");
 }
 ?>
