@@ -37,6 +37,9 @@ if (isset($_POST['submit'])) {
                     $_SESSION['u_email'] = $row['user_email'];
                     $_SESSION['u_uid'] = $row['user_uid'];
                     $_SESSION['u_admin'] = $row['user_admin'];
+                    $_SESSION['u_address'] = $row['user_address'];
+                    $_SESSION['u_post'] = $row['user_postcode'];
+                    $_SESSION['u_city'] = $row['user_city'];
                     header("Location: ../login.php?login=success");
                     exit();
                 }

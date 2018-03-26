@@ -18,46 +18,49 @@ session_start();
 <body>
 
     <header>
+
+      <div class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper">
-                <!-- NAV BRAND-LOGO and MOBILE NAV-MENU BUTTON -->
-                <a href="index.php" class="brand-logo center">SAARKOTH</a>
-                <a href="#" data-activates="mobile-demo" class="right button-collapse">
-                <i class="material-icons">menu</i>
+          <div class="nav-wrapper">
+            <!-- NAV BRAND-LOGO and MOBILE NAV-MENU BUTTON -->
+            <a href="index.php" class="brand-logo center">SAARKOTH</a>
+            <a href="#" data-activates="mobile-demo" class="right button-collapse">
+            <i class="material-icons">menu</i>
             </a>
-                <!-- LEFT OF BRAND-LOGO -->
-                <ul class="left hide-on-med-and-down">
-                    <?php include('includes/nav.php'); ?>
-                </ul>
-                <!-- RIGHT OF BRAND-LOGO -->
-                <ul class="right hide-on-med-and-down">
-                    <?php
-if (isset($_SESSION['u_id']))
-{
-echo
-"
-<li><a href=\"account.php\">Account</a></li>
-";
-}
-else
-{
-echo "
-<li><a href=\"login.php\">Log in</a></li>
-<li><a href=\"signup.php\">Sign up</a></li>
-";
-}
-?>
-                </ul>
-
-            </div>
-
-            <!-- MOBILE NAV-MENU -->
-            <ul class="side-nav" id="mobile-demo">
-                <?php include('includes/nav.php'); ?>
+            <!-- LEFT OF BRAND-LOGO -->
+            <ul class="left hide-on-med-and-down">
+            <?php include('includes/nav.php'); ?>
+            </ul>
+            <!-- RIGHT OF BRAND-LOGO -->
+            <ul class="right hide-on-med-and-down">
+            <?php
+            if (isset($_SESSION['u_id']))
+            {
+            echo
+            "
+            <li><a href=\"account.php\">Account</a></li>
+            <li><a href=\"merch.php#ShoppingCart\"><i class=\"material-icons\">shopping_cart</i></a></li>
+            ";
+            }
+            else
+            {
+            echo "
+            <li><a href=\"login.php\">Log in</a></li>
+            <li><a href=\"signup.php\">Sign up</a></li>
+            ";
+            }
+            ?>
             </ul>
 
             </div>
-        </nav>
+          </nav>
+          </div>
+
+            <!-- MOBILE NAV-MENU -->
+            <ul class="side-nav" id="mobile-demo">
+              <?php include('includes/nav.php'); ?>
+            </ul>
+
 
         <script type="text/javascript">
             $(document).ready(function() {

@@ -30,7 +30,7 @@
 
 						if (isset($_SESSION['u_uid']) && $_SESSION['u_admin'] > 0) {
 							$edit = "
-							<a class=\"btn\" href=\"includes/d_news.inc.php?pid=$p_id\">Delete</a>
+							<a class=\"btn\" href=\"includes/d_news.inc.php?pid=$p_id&image=$p_img\">Delete</a>
 							<a class=\"btn\" href=\"e_news.php?pid=$p_id\">Edit</a>
 							";
 						} else {

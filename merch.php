@@ -106,7 +106,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 
 			<div class="row">
 				<div class="col s12 ">
-					<table class="">
+					<table id="ShoppingCart">
 						<thead>
 							<tr><th colspan="5"><h3>Order Details</h3></th></tr>
 							<tr>
