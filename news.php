@@ -41,6 +41,7 @@
 
 						$news .= "
 									<div class=\"flow-text article-content\">
+										<div class=\"row\">
 										<div class=\"col m8 left\">
 											<h2>$p_title</h2>
 										</div>
@@ -48,9 +49,14 @@
 											<h5 class=\"right-align\">$p_date</h5>
 											<h5 class=\"right-align\">$p_user</h5>
 										</div>
+										</div>
+										<div class=\"row\">
 										<img class=\"materialboxed responsive-img\" src=\"$p_img\" alt=\"\">
+										</div>
+										<div class=\"row\">
 										<div>$p_content</div>
 										$edit
+										</div>
 									</div>";
 					}
 					echo $news;
