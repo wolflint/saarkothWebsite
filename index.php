@@ -93,37 +93,28 @@
 
 							<tbody>
 								<tr>
-									<td>10/03/2018</td>
-									<td>Maze</td>
-									<td>257 Mansfield Rd, Nottingham</td>
-									<td>£5.00</td>
-									<td>
-										<a class="waves-effect waves-dark btn cyan darken-3">
-											<b>BUY</b>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>17/03/2018</td>
-									<td>Castle Hotel</td>
-									<td>Lady Bank, Silver St, Tamworth</td>
-									<td>£5.00</td>
-									<td>
-										<a class="waves-effect waves-dark btn cyan darken-3">
-											<b>BUY</b>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>24/03/2018</td>
-									<td>George IV Public House</td>
-									<td>34 Bore St, Lichfield</td>
-									<td>£5.00</td>
-									<td>
-										<a class="waves-effect waves-dark btn cyan darken-3">
-											<b>BUY</b>
-										</a>
-									</td>
+									<?php
+									include_once 'includes/dbh.inc.php';
+									session_start();
+									$sql = "SELECT * FROM tour ORDER BY date ASC;";
+									$result = mysqli_query($conn, $sql);
+									$resultCheck = mysqli_num_rows($result);
+
+									if ($resultCheck < 1) {
+										echo "No events";
+										} elseif ($resultCheck > 0) {
+										while ($row = mysqli_fetch_assoc($result)) {
+											echo "<tr><td>" . $row['date'] . "</td>";
+											echo "<td>" . $row['venue'] . "</td>";
+											echo "<td>" . $row['address'] . "</td>";
+											echo "<td>£" . number_format($row['price'], 2) . "</td></tr>";
+										}
+									}
+
+									if (isset($_SESSION['u_admin']) && $_SESSION['u_admin'] > 0) {
+										echo "<a class=\"btn\" href=\"addEvents.php\">Add Events</a>";
+									}
+									?>
 								</tr>
 							</tbody>
 						</table>
@@ -140,5 +131,4 @@
 			</div>
 		</section>
 	</main>
-
-<?php include('includes/footer.php'); ?>
+<?php include_once 'includes/footer.php' ?>
