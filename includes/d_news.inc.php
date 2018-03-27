@@ -1,5 +1,7 @@
 <?php
     include_once 'dbh.inc.php';
+    //If post id isn't set redirect back to news
+    //else delete from news where id matches and delete image file from server then redirect to news
     if (!isset($_GET['pid'])) {
         header('Location: ../news.php?delete_error');
     } else {

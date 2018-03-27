@@ -16,7 +16,7 @@ if ($_SESSION['u_admin'] < 1) {
                 <!-- id 	date 	venue 	address 	price 	href -->
 
                 <div class="input-field">
-                    <input type="text" name="date" id="date" class="datepicker">
+                    <input type="text" name="date" id="date">
                     <label for="date">Event date (format: yyyy-mm-dd)</label>
                 </div>
 
@@ -52,7 +52,3 @@ if ($_SESSION['u_admin'] < 1) {
 
 
 <?php include('includes/footer.php'); ?>
-<script type="text/javascript">
-var elem = document.querySelector('.datepicker');
-var instance = M.Datepicker.init(elem, format('yyyy-mm-dd'));
-</script>
