@@ -1,20 +1,20 @@
 <?php
 $pageTitle = "Saarkoth - Merch"; include_once 'includes/header.php'; include_once 'includes/dbh.inc.php';
 
-//Cart code
+//SHopping cart code
 $product_ids = array();
-//session_destroy();
 
-//check if Add to Cart button has been submitted
+//check if Add to Cart button has been pressed
 if(filter_input(INPUT_POST, 'add_to_cart')){
 	if(isset($_SESSION['shopping_cart'])){
 
-		//keep track of how many products are in the shopping cart
+		//count how many products are in the shopping cart
 		$count = count($_SESSION['shopping_cart']);
 
-		//create sequantial array for matching array keys to products id's
+		//create array for matching array keys to products id's
 		$product_ids = array_column($_SESSION['shopping_cart'], 'id');
 
+		//if id not in array, add it
 		if (!in_array(filter_input(INPUT_GET, 'id'), $product_ids)){
 		$_SESSION['shopping_cart'][$count] = array
 			(
@@ -24,7 +24,7 @@ if(filter_input(INPUT_POST, 'add_to_cart')){
 				'quantity' => filter_input(INPUT_POST, 'quantity')
 			);
 		}
-		else { //product already exists, increase quantity
+		else { //if already exists, increase quantity
 			//match array key to id of the product being added to the cart
 			for ($i = 0; $i < count($product_ids); $i++){
 				if ($product_ids[$i] == filter_input(INPUT_GET, 'id')){
@@ -39,14 +39,10 @@ if(filter_input(INPUT_POST, 'add_to_cart')){
 		//create array using submitted form data, start from key 0 and fill it with values
 		$_SESSION['shopping_cart'][0] = array
 		(
-			'id' => $_GET['id'],
-			'name' => $_POST['name'],
-			'price' => $_POST['price'],
-			'quantity' => $_POST['quantity']
-			// 'id' => filter_input(INPUT_GET, 'id'),
-			// 'name' => filter_input(INPUT_POST, 'name'),
-			// 'price' => filter_input(INPUT_POST, 'price'),
-			// 'quantity' => filter_input(INPUT_POST, 'quantity')
+			'id' => filter_input(INPUT_GET, 'id'),
+			'name' => filter_input(INPUT_POST, 'name'),
+			'price' => filter_input(INPUT_POST, 'price'),
+			'quantity' => filter_input(INPUT_POST, 'quantity')
 		);
 	}
 }
@@ -59,7 +55,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 			unset($_SESSION['shopping_cart'][$key]);
 		}
 	}
-	//reset session array keys so they match with $product_ids numeric array
+	//reset session array keys so they match with $product_ids array
 	$_SESSION['shopping_cart'] = array_values($_SESSION['shopping_cart']);
 }
 ?>
@@ -76,10 +72,12 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 					<h1>APPAREL</h1>
 				</div> -->
 				<?php
+				//select producst from table
 					$sql = "SELECT * FROM products ORDER BY product_id ASC";
 					$result = mysqli_query($conn, $sql);
 					$resultCheck = mysqli_num_rows($result);
 
+					//if there are results fetch them and display in HTML
 					if ($resultCheck > 0) {
 						while ($product = mysqli_fetch_assoc($result)) {
 				 ?>
@@ -100,7 +98,8 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 			<?php
 						}
 					} else {
-						header("Locarion: merch.php?error=noresults");
+						//else redirect with error
+						header("Location: merch.php?error=noresults");
 					}
 			?>
 
@@ -120,9 +119,11 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 
 						<tbody>
 							<?php
+							//check if shopping cart is empty
 								if (!empty($_SESSION['shopping_cart'])){
 									$total = 0;
 
+									//add rows to table with shopping cart items
 									foreach ($_SESSION['shopping_cart'] as $key => $product){
 									 ?>
 									 <tr>
@@ -137,6 +138,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 										 </td>
 									 </tr>
 									 <?php
+									 //track total
 								 	$total = $total + ($product['quantity'] * $product['price']);
 								}
 								  	?>
@@ -148,6 +150,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 								  <tr>
 								  	<td colspan="5">
 									<?php
+									//display checkout button if there is at least 1 item in the cart
 										if (isset($_SESSION['shopping_cart'])){
 											if(count($_SESSION['shopping_cart']) > 0){
 											 ?>
@@ -166,88 +169,6 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 					</table>
 				</div>
 			</div>
-				<!-- <div class="col m4">
-					<div class="card">
-						<div class="card-image">
-							<img class="materialboxed" src="./assets/merch/t2.png" alt="">
-							<a class="btn-floating halfway-fab waves-effect waves-light  cyan darken-3">
-								<i class="material-icons">add_shopping_cart</i>
-							</a>
-						</div>
-						<div class="card-content grey darken-4">
-							<span class="card-title right">£9.99</span>
-							<p>T-SHIRT RED</p>
-						</div>
-					</div>
-				</div>
-				<div class="col m4">
-
-					<div class="card">
-						<div class="card-image">
-							<img class="materialboxed" src="./assets/merch/t3.png" alt="">
-							<a class="btn-floating halfway-fab waves-effect waves-light  cyan darken-3">
-								<i class="material-icons">add_shopping_cart</i>
-							</a>
-						</div>
-						<div class="card-content grey darken-4">
-							<span class="card-title right">£9.99</span>
-							<p>T-SHIRT BLUE</p>
-						</div>
-					</div>
-				</div>
-		</section>
-
-		<section id="posters">
-			<div class="row">
-
-				<div class="col s12">
-					<h1>POSTERS</h1>
-				</div>
-
-				<div class="col m4">
-					<div class="card">
-						<div class="card-image">
-							<img class="materialboxed" src="./assets/merch/p1.png" alt="">
-							<a class="btn-floating halfway-fab waves-effect waves-light  cyan darken-3">
-								<i class="material-icons">add_shopping_cart</i>
-							</a>
-						</div>
-						<div class="card-content grey darken-4">
-							<span class="card-title right">£3.99</span>
-							<p>WOODS - ELLIS (24" x 18")</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col m4">
-					<div class="card">
-						<div class="card-image">
-							<img class="materialboxed" src="./assets/merch/p2.png" alt="">
-							<a class="btn-floating halfway-fab waves-effect waves-light  cyan darken-3">
-								<i class="material-icons">add_shopping_cart</i>
-							</a>
-						</div>
-						<div class="card-content grey darken-4">
-							<span class="card-title right">£3.99</span>
-							<p>WOODS - ASA (24" x 18")</p>
-						</div>
-					</div>
-				</div>
-				<div class="col m4">
-
-					<div class="card">
-						<div class="card-image">
-							<img class="materialboxed" src="./assets/merch/p3.png" alt="">
-							<a class="btn-floating halfway-fab waves-effect waves-light  cyan darken-3">
-								<i class="material-icons">add_shopping_cart</i>
-							</a>
-						</div>
-						<div class="card-content grey darken-4">
-							<span class="card-title right">£3.99</span>
-							<p>WOODS - LEWIS (24" x 18")</p>
-						</div>
-					</div>
-				</div> -->
 		</section>
 
 	</main>
