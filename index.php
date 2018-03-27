@@ -80,7 +80,14 @@
 			<div class="container">
 				<div class="row">
 					<div class="col s12">
-						<h1 class="tinfo">Tour Info</h1>
+						<h1 class="tinfo" id="tour">Tour Info</h1>
+						<?php
+						include_once 'includes/dbh.inc.php';
+						session_start();
+						if (isset($_SESSION['u_admin']) && $_SESSION['u_admin'] > 0) {
+							echo "<a class=\"btn\" href=\"addEvent.php\">Add Events</a>";
+						}
+						?>
 						<table class="flow-text">
 							<thead>
 								<tr>
@@ -88,15 +95,16 @@
 									<th>Venue</th>
 									<th>Address</th>
 									<th>Tickets</th>
+									<?php if ($_SESSION['u_admin'] > 0) {
+										echo "<th> Delete? </th>";
+									} ?>
 								</tr>
 							</thead>
 
 							<tbody>
 								<tr>
 									<?php
-									include_once 'includes/dbh.inc.php';
-									session_start();
-									$sql = "SELECT * FROM tour ORDER BY date ASC;";
+									$sql = "SELECT * FROM tour WHERE date > NOW() ORDER BY date ASC;";
 									$result = mysqli_query($conn, $sql);
 									$resultCheck = mysqli_num_rows($result);
 
@@ -107,12 +115,12 @@
 											echo "<tr><td>" . $row['date'] . "</td>";
 											echo "<td>" . $row['venue'] . "</td>";
 											echo "<td>" . $row['address'] . "</td>";
-											echo "<td>£" . number_format($row['price'], 2) . "</td></tr>";
+											echo "<td>£" . number_format($row['price'], 2) . "</td>";
+											if ($_SESSION['u_admin'] > 0) {
+												echo "<td><a href=\"includes/d_event.inc.php?id=" . $row['id'] . "\" class=\"btn red darken-4\">Delete</a></td>";
+											}
+											echo "</tr>";
 										}
-									}
-
-									if (isset($_SESSION['u_admin']) && $_SESSION['u_admin'] > 0) {
-										echo "<a class=\"btn\" href=\"addEvents.php\">Add Events</a>";
 									}
 									?>
 								</tr>
