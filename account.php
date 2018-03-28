@@ -78,7 +78,7 @@ if ($resultCheck > 0) {
 
               //if no results display error message
               if ($resultCheck < 1) {
-                  echo "FAIL";
+                  echo "No order history";
               } elseif ($resultCheck > 0) {
                   //clear $overall and $orders
                   $overall = 0;

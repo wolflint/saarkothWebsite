@@ -82,11 +82,15 @@
 					<div class="col s12">
 						<h1 class="tinfo" id="tour">Tour Info</h1>
 						<?php
+						//db config file and session
 						include_once 'includes/dbh.inc.php';
 						session_start();
-						if (isset($_SESSION['u_admin']) && $_SESSION['u_admin'] > 0) {
+						//check if session is set
+						if (isset($_SESSION['u_id'])) {
+						if ($_SESSION['u_admin'] > 0) {
 							echo "<a class=\"btn\" href=\"addEvent.php\">Add Events</a>";
 						}
+					}
 						?>
 						<table class="flow-text">
 							<thead>
@@ -95,9 +99,12 @@
 									<th>Venue</th>
 									<th>Address</th>
 									<th>Tickets</th>
-									<?php if ($_SESSION['u_admin'] > 0) {
+									<?php
+									if (isset($_SESSION['u_id'])) {
+									if ($_SESSION['u_admin'] > 0) {
 										echo "<th> Delete? </th>";
-									} ?>
+									}
+								} ?>
 								</tr>
 							</thead>
 
@@ -116,8 +123,10 @@
 											echo "<td>" . $row['venue'] . "</td>";
 											echo "<td>" . $row['address'] . "</td>";
 											echo "<td>£" . number_format($row['price'], 2) . "</td>";
-											if ($_SESSION['u_admin'] > 0) {
-												echo "<td><a href=\"includes/d_event.inc.php?id=" . $row['id'] . "\" class=\"btn red darken-4\">Delete</a></td>";
+											if (isset($_SESSION['u_id'])) {
+												if ($_SESSION['u_admin'] > 0) {
+													echo "<td><a href=\"includes/d_event.inc.php?id=" . $row['id'] . "\" class=\"btn red darken-4\">Delete</a></td>";
+												}
 											}
 											echo "</tr>";
 										}

@@ -159,9 +159,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 								</td>
 							  </tr>
 							  <?php
-						  } else {
-						  	echo "ERROR EMPTY";
-						  }
+						  } 
 							   ?>
 
 						</tbody>
