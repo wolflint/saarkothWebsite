@@ -101,16 +101,16 @@ if ($resultCheck > 0) {
                                     <td>$orderDate</td>
                                     <td>$productName</td>
                                     <td>$productType</td>
-                                    <td>$price</td>
+                                    <td>£$price</td>
                                     <td>$quant</td>
-                                    <td>$total</td>
+                                    <td>£$total</td>
                                 </tr>
                       ";
                       $overall += $total;
                   }
                   //display $orders and $overall
                   echo $orders;
-                  echo "Overall Total: " . $overall;
+                  echo "Overall Total: £" . $overall;
               }
               ?>
           </tbody>
