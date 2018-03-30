@@ -2,11 +2,18 @@
 
 <main class="container">
 <?php
+//check if user is logged in if not redirect to login screen
+if (!isset($_SESSION['u_id'])) {
+    header("Location: login.php");
+} else {
+
+    //select user infomation from database
 $seshID = $_SESSION['u_id'];
 $sql = "SELECT * FROM users WHERE user_id=$seshID;";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 
+//if results found set variable values
 if ($resultCheck > 0) {
   while ($row = mysqli_fetch_assoc($result)) {
     $u_id       = $row['user_id'];
@@ -18,8 +25,9 @@ if ($resultCheck > 0) {
     $u_city     = $row['user_city'];
     $u_postcode = $row['user_postcode'];  }
 }
+}
 ?>
-
+    <!-- Display user information  -->
   <div class="row center-align">
     <h2>User ID: <em><?php echo $u_id; ?></em></h2>
     <h2>First name: <em><?php echo $u_first; ?></em></h2>
@@ -63,16 +71,20 @@ if ($resultCheck > 0) {
           </thead>
           <tbody>
               <?php
+              //select all from users, orders and order_products
               $sql = "SELECT * FROM orders a INNER JOIN orders_products b ON a.order_id = b.order_id INNER JOIN products c ON b.product_id = c.product_id WHERE a.users_user_id = '$seshID' ORDER BY a.order_id DESC";
               $result = mysqli_query($conn, $sql);
               $resultCheck = mysqli_num_rows($result);
 
+              //if no results display error message
               if ($resultCheck < 1) {
-                  echo "FAIL";
+                  echo "No order history";
               } elseif ($resultCheck > 0) {
-                  echo "YAY!" . "<br>";
+                  //clear $overall and $orders
                   $overall = 0;
                   $orders = "";
+
+                  //fetch data from tables and set variables
                   while ($row = mysqli_fetch_assoc($result)) {
                       $orderId = $row['order_id'];
                       $orderDate = $row['order_date'];
@@ -83,20 +95,22 @@ if ($resultCheck > 0) {
                       $quant = $row['quantity'];
                       $total = $quant * $price;
 
+                      //add all results to $orders variable
                       $orders .="<tr>
                                     <td>$orderId</td>
                                     <td>$orderDate</td>
                                     <td>$productName</td>
                                     <td>$productType</td>
-                                    <td>$price</td>
+                                    <td>£$price</td>
                                     <td>$quant</td>
-                                    <td>$total</td>
+                                    <td>£$total</td>
                                 </tr>
                       ";
                       $overall += $total;
                   }
+                  //display $orders and $overall
                   echo $orders;
-                  echo $overall;
+                  echo "Overall Total: £" . $overall;
               }
               ?>
           </tbody>

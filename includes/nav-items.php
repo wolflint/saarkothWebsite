@@ -1,5 +1,5 @@
 <?php
-
+    //arra with navigation items
     $navItems = array(
                     array(
                         'slug' => "news.php",

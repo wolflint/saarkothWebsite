@@ -49,7 +49,23 @@ session_start();
 
             <!-- MOBILE NAV-MENU -->
             <ul class="side-nav" id="mobile-demo">
-              <?php include('includes/nav.php'); ?>
+              <?php include('includes/nav.php');
+              if (isset($_SESSION['u_id']))
+              {
+              echo
+              "
+              <li><a href=\"account.php\">Account</a></li>
+              <li><a href=\"merch.php#ShoppingCart\"><i class=\"material-icons\">shopping_cart</i></a></li>
+              ";
+              }
+              else
+              {
+              echo "
+              <li><a href=\"login.php\">Log in</a></li>
+              <li><a href=\"signup.php\">Sign up</a></li>
+              ";
+              }
+              ?>
             </ul>
 
 
