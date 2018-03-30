@@ -21,7 +21,7 @@ session_start();
 
       <div class="navbar-fixed">
         <nav>
-          <div class="nav-wrapper">
+          <form class="nav-wrapper" action="includes/login.inc.php" method="post">
             <!-- NAV BRAND-LOGO and MOBILE NAV-MENU BUTTON -->
             <a href="index.php" class="brand-logo center">SAARKOTH</a>
             <a href="#" data-activates="mobile-demo" class="right button-collapse">
@@ -31,28 +31,19 @@ session_start();
             <ul class="left hide-on-med-and-down">
             <?php include('includes/nav.php'); ?>
             </ul>
-            <!-- RIGHT OF BRAND-LOGO -->
-            <ul class="right hide-on-med-and-down">
+            <ul id="right-nav" class="right hide-on-med-and-down">
             <?php
-            if (isset($_SESSION['u_id']))
-            {
-            echo
-            "
-            <li><a href=\"account.php\">Account</a></li>
-            <li><a href=\"merch.php#ShoppingCart\"><i class=\"material-icons\">shopping_cart</i></a></li>
-            ";
-            }
-            else
-            {
-            echo "
-            <li><a href=\"login.php\">Log in</a></li>
-            <li><a href=\"signup.php\">Sign up</a></li>
-            ";
-            }
-            ?>
-            </ul>
 
-            </div>
+            if (!(isset($_SESSION['u_id']))) {
+                echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center;\" type=\"text\" name=\"uid\" placeholder=\"Username/Email\"></li>";
+                echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center;\" type=\"password\" name=\"pwd\" placeholder=\"Password\"></li>";
+                echo "<li style=\"padding-left:10px; padding-right:10px;\"><button class=\"btn\" type=\"submit\" name=\"submit\">Login</button></li>";
+                echo "<li style=\"padding-left:10px; padding-right:10px;\"><a href=\"../signup.php\">Register</li>";
+            }
+
+             ?>
+         </ul>
+        </form>
           </nav>
           </div>
 

@@ -1,3 +1,4 @@
+<?php include_once 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +16,7 @@
 
 <body>
 	<main>
+
 		<section id="parallax-section">
 			<div class="row">
 				<!-- Logo image -->
@@ -95,7 +97,7 @@
 								<tr>
 									<?php
 									include_once 'includes/dbh.inc.php';
-									session_start();
+									// session_start();
 									$sql = "SELECT * FROM tour ORDER BY date ASC;";
 									$result = mysqli_query($conn, $sql);
 									$resultCheck = mysqli_num_rows($result);

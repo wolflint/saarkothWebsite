@@ -53,7 +53,7 @@ main {
 /* NAVBAR */
 
 nav {
-  background-color: rgba(22, 22, 22, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
   font-family: "Norse";
   text-align: center;
 }
@@ -79,10 +79,6 @@ a.side-nav {
   color: rgb(255, 255, 255);
 }
 
-nav ul li.active {
-  background-color: rgb(33, 33, 33);
-}
-
 nav ul li.active>a {
   color: rgb(30, 188, 209);
 }
@@ -92,7 +88,7 @@ nav ul a {
 }
 
 nav ul a:hover {
-  background-color: rgb(33, 33, 33);
+  background-color: rgb(33, 33, 33, 0.4);
   color: rgb(30, 188, 209);
 }
 
@@ -192,4 +188,9 @@ a.shopping>i:hover {
 .tinfo {
   padding-top: 50px;
   padding-bottom: 30px;
+}
+
+ul#rightnav li {
+    padding-left: 10px;
+    padding-right: 10px;
 }
