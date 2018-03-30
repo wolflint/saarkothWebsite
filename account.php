@@ -29,14 +29,13 @@ if ($resultCheck > 0) {
 ?>
     <!-- Display user information  -->
   <div class="row center-align">
-    <h2>User ID: <em><?php echo $u_id; ?></em></h2>
-    <h2>First name: <em><?php echo $u_first; ?></em></h2>
-    <h2>Last name: <em><?php echo $u_last; ?></em></h2>
-    <h2>Email: <em><?php echo $u_email; ?></em></h2>
-    <h2>Username: <em><?php echo $u_uid; ?></em></h2>
-    <h2>Address: <em><?php echo $u_address; ?></em></h2>
-    <h2>City: <em><?php echo $u_city; ?></em></h2>
-    <h2>Post Code: <em><?php echo $u_postcode; ?></em></h2>
+      <h1><?php echo $u_uid; ?>'s Account</h1>
+    <h4>First name: <em><?php echo $u_first; ?></em></h4>
+    <h4>Last name: <em><?php echo $u_last; ?></em></h4>
+    <h4>Email: <em><?php echo $u_email; ?></em></h4>
+    <h4>Address: <em><?php echo $u_address; ?></em></h4>
+    <h4>City: <em><?php echo $u_city; ?></em></h4>
+    <h4>Post Code: <em><?php echo $u_postcode; ?></em></h4>
   </div>
 
   <div class="row">

@@ -44,8 +44,9 @@ session_start();
                 echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center; font-size:16px;\" type=\"text\" name=\"uid\" placeholder=\"Username/Email\"><input hidden name=\"page\" value=\"$page\"></li>";
                 echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center; font-size:16px;\" type=\"password\" name=\"pwd\" placeholder=\"Password\"></li>";
                 echo "<li style=\"padding-left:10px; padding-right:10px;\"><button class=\"btn cyan darken-4\" type=\"submit\" name=\"submit\">Login</button></li>";
-                echo "<li style=\"padding-left:10px; padding-right:10px;\"><a href=\"../signup.php\">Register</li>";
+                echo "<li style=\"padding-left:10px; padding-right:10px;\"><a href=\"signup.php\">Register</a></li>";
             } elseif (isset($_SESSION['u_id'])) {
+                echo "<li style=\"padding-left:10px; padding-right:10px; font-size:1.5rem;\">" . $_SESSION['u_uid'] . "</li>";
                 echo "<li style=\"padding-left:10px; padding-right:10px;\"><input hidden name=\"page\" value=\"$page\"><button class=\"btn cyan darken-4\" type=\"submit\" name=\"submit\">Logout</button></li>";
                 echo "<li><a href=\"account.php\">Account</a></li><li><a href=\"merch.php#ShoppingCart\"><i class=\"material-icons\">shopping_cart</i></a></li>";
             }
@@ -71,7 +72,7 @@ session_start();
                   echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center; font-size:16px;\" type=\"text\" name=\"uid\" placeholder=\"Username/Email\"><input hidden name=\"page\" value=\"$page\"></li>";
                   echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center; font-size:16px;\" type=\"password\" name=\"pwd\" placeholder=\"Password\"></li>";
                   echo "<li style=\"padding-left:10px; padding-right:10px;\"><button class=\"btn cyan darken-4\" type=\"submit\" name=\"submit\">Login</button></li>";
-                  echo "<li style=\"padding-left:10px; padding-right:10px;\"><a href=\"signup.php\">Register</li>";
+                  echo "<li style=\"padding-left:10px; padding-right:10px;\"><a href=\"signup.php\">Register</a></li>";
               } elseif (isset($_SESSION['u_id'])) {
                   echo "<li style=\"padding-left:10px; padding-right:10px;\"><input hidden name=\"page\" value=\"$page\"><button class=\"btn cyan darken-4\" type=\"submit\" name=\"submit\">Logout</button></li>";
                   echo "<li><a href=\"account.php\">Account</a></li><li><a href=\"merch.php#ShoppingCart\"><i class=\"material-icons\">shopping_cart</i></a></li>";
@@ -81,13 +82,5 @@ session_start();
             </ul>
         </form>
 
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-                $('.modal').modal();
-            });
-
-        </script>
         <!-- END NAVIGATION -->
     </header>
