@@ -39,14 +39,14 @@ session_start();
             </ul>
             <ul id="right-nav" class="right hide-on-med-and-down">
             <?php
-
+            $page = $_SERVER['PHP_SELF'];
             if (!(isset($_SESSION['u_id']))) {
-                echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center;\" type=\"text\" name=\"uid\" placeholder=\"Username/Email\"></li>";
-                echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center;\" type=\"password\" name=\"pwd\" placeholder=\"Password\"></li>";
+                echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center; font-size:16px;\" type=\"text\" name=\"uid\" placeholder=\"Username/Email\"><input hidden name=\"page\" value=\"$page\"></li>";
+                echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center; font-size:16px;\" type=\"password\" name=\"pwd\" placeholder=\"Password\"></li>";
                 echo "<li style=\"padding-left:10px; padding-right:10px;\"><button class=\"btn cyan darken-4\" type=\"submit\" name=\"submit\">Login</button></li>";
                 echo "<li style=\"padding-left:10px; padding-right:10px;\"><a href=\"../signup.php\">Register</li>";
             } elseif (isset($_SESSION['u_id'])) {
-                echo "<li style=\"padding-left:10px; padding-right:10px;\"><button class=\"btn cyan darken-4\" type=\"submit\" name=\"submit\">Logout</button></li>";
+                echo "<li style=\"padding-left:10px; padding-right:10px;\"><input hidden name=\"page\" value=\"$page\"><button class=\"btn cyan darken-4\" type=\"submit\" name=\"submit\">Logout</button></li>";
                 echo "<li><a href=\"account.php\">Account</a></li><li><a href=\"merch.php#ShoppingCart\"><i class=\"material-icons\">shopping_cart</i></a></li>";
             }
 
@@ -57,25 +57,29 @@ session_start();
           </div>
 
             <!-- MOBILE NAV-MENU -->
-            <ul class="side-nav" id="mobile-demo">
+            <?php
+            if (isset($_SESSION['u_id'])) {
+                echo "<form action=\"includes/logout.inc.php\" method=\"POST\">";
+            }   elseif (!(isset($_SESSION['u_id']))) {
+                echo "<form class=\"nav-wrapper\" action=\"includes/login.inc.php\" method=\"post\">";
+            }
+             ?>
+            <ul class="side-nav center-align" id="mobile-demo">
               <?php include('includes/nav.php');
-              if (isset($_SESSION['u_id']))
-              {
-              echo
-              "
-              <li><a href=\"account.php\">Account</a></li>
-              <li><a href=\"merch.php#ShoppingCart\"><i class=\"material-icons\">shopping_cart</i></a></li>
-              ";
+              $page = $_SERVER['PHP_SELF'];
+              if (!(isset($_SESSION['u_id']))) {
+                  echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center; font-size:16px;\" type=\"text\" name=\"uid\" placeholder=\"Username/Email\"><input hidden name=\"page\" value=\"$page\"></li>";
+                  echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center; font-size:16px;\" type=\"password\" name=\"pwd\" placeholder=\"Password\"></li>";
+                  echo "<li style=\"padding-left:10px; padding-right:10px;\"><button class=\"btn cyan darken-4\" type=\"submit\" name=\"submit\">Login</button></li>";
+                  echo "<li style=\"padding-left:10px; padding-right:10px;\"><a href=\"signup.php\">Register</li>";
+              } elseif (isset($_SESSION['u_id'])) {
+                  echo "<li style=\"padding-left:10px; padding-right:10px;\"><input hidden name=\"page\" value=\"$page\"><button class=\"btn cyan darken-4\" type=\"submit\" name=\"submit\">Logout</button></li>";
+                  echo "<li><a href=\"account.php\">Account</a></li><li><a href=\"merch.php#ShoppingCart\"><i class=\"material-icons\">shopping_cart</i></a></li>";
               }
-              else
-              {
-              echo "
-              <li><a href=\"login.php\">Log in</a></li>
-              <li><a href=\"signup.php\">Sign up</a></li>
-              ";
-              }
-              ?>
+
+               ?>
             </ul>
+        </form>
 
 
         <script type="text/javascript">

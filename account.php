@@ -87,7 +87,7 @@ if ($resultCheck > 0) {
                   //fetch data from tables and set variables
                   while ($row = mysqli_fetch_assoc($result)) {
                       $orderId = $row['order_id'];
-                      $orderDate = $row['order_date'];
+                      $orderDate = date("d-m-Y", strtotime($row['order_date']));
                       $productId = $row['product_id'];
                       $productName = $row['product_name'];
                       $productType = $row['product_type'];

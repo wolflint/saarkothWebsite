@@ -86,7 +86,7 @@
 						<?php
 						//db config file and session
 						include_once 'includes/dbh.inc.php';
-						session_start();
+						//session_start();
 						//check if session is set
 						if (isset($_SESSION['u_id'])) {
 						if ($_SESSION['u_admin'] > 0) {
@@ -121,7 +121,7 @@
 										echo "No events";
 										} elseif ($resultCheck > 0) {
 										while ($row = mysqli_fetch_assoc($result)) {
-											echo "<tr><td>" . $row['date'] . "</td>";
+											echo "<tr><td>" . date("d-m-Y", strtotime($row['date'])) . "</td>";
 											echo "<td>" . $row['venue'] . "</td>";
 											echo "<td>" . $row['address'] . "</td>";
 											echo "<td>£" . number_format($row['price'], 2) . "</td>";
@@ -151,3 +151,10 @@
 		</section>
 	</main>
 <?php include_once 'includes/footer.php' ?>
+<script type="text/javascript">
+$(document).ready(function(){
+	if (window.scrollY < 64) {
+		$(this).scrollTop(64);
+	 }
+});
+</script>

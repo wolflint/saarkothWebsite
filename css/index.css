@@ -57,13 +57,13 @@ th {
 
 @media (min-aspect-ratio: 16/10) {
 	#parallax-section {
-		background-size: calc(100vw + 30px) auto;
+		background-size: calc(100vw + 64px) auto;
 	}
 }
 
 @media (max-aspect-ratio: 16/10) {
 	#parallax-section {
-		background-size: auto calc(100vh + 30px);
+		background-size: auto calc(100vh + 64px);
 	}
 }
 
