@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     //Check if inputs are empty
     //if enpty redirect
     if (empty($uid) || empty($pwd)) {
-        header("Location: ../login.php?login=empty");
+        header("Location: ../index.php?login=empty");
         exit();
 
     } else {
@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
         $resultCheck = mysqli_num_rows($result);
         //if no results redirect with error
         if ($resultCheck < 1) {
-            header("Location: ../login.php?login=error");
+            header("Location: ../index.php?login=error");
             exit();
         } else {
             //fetch results
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
                 $hashedPwdCheck = password_verify($pwd, $row['user_pwd']);
                 //if wrong password redirect
                 if ($hashedPwdCheck == false) {
-                    header("Location: ../login.php?login=error");
+                    header("Location: ../index.php?login=error");
                     exit();
                     //if correct password set session
                 } elseif ($hashedPwdCheck == true) {
@@ -48,13 +48,13 @@ if (isset($_POST['submit'])) {
                     $_SESSION['u_address'] = $row['user_address'];
                     $_SESSION['u_post'] = $row['user_postcode'];
                     $_SESSION['u_city'] = $row['user_city'];
-                    header("Location: ../login.php?login=success");
+                    header("Location: ../index.php?login=success");
                     exit();
                 }
             }
         }
     }
 } else {
-    header("Location: ../login.php?login=error");
+    header("Location: ../index.php?login=error");
     exit();
 }

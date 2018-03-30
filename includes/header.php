@@ -21,7 +21,13 @@ session_start();
 
       <div class="navbar-fixed">
         <nav>
-          <form class="nav-wrapper" action="includes/login.inc.php" method="post">
+            <?php
+            if (isset($_SESSION['u_id'])) {
+                echo "<form action=\"includes/logout.inc.php\" method=\"POST\">";
+            }   elseif (!(isset($_SESSION['u_id']))) {
+                echo "<form class=\"nav-wrapper\" action=\"includes/login.inc.php\" method=\"post\">";
+            }
+             ?>
             <!-- NAV BRAND-LOGO and MOBILE NAV-MENU BUTTON -->
             <a href="index.php" class="brand-logo center">SAARKOTH</a>
             <a href="#" data-activates="mobile-demo" class="right button-collapse">
@@ -37,8 +43,11 @@ session_start();
             if (!(isset($_SESSION['u_id']))) {
                 echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center;\" type=\"text\" name=\"uid\" placeholder=\"Username/Email\"></li>";
                 echo "<li style=\"padding-left:10px; padding-right:10px; width:200px;\"><input style=\"text-align: center;\" type=\"password\" name=\"pwd\" placeholder=\"Password\"></li>";
-                echo "<li style=\"padding-left:10px; padding-right:10px;\"><button class=\"btn\" type=\"submit\" name=\"submit\">Login</button></li>";
+                echo "<li style=\"padding-left:10px; padding-right:10px;\"><button class=\"btn cyan darken-4\" type=\"submit\" name=\"submit\">Login</button></li>";
                 echo "<li style=\"padding-left:10px; padding-right:10px;\"><a href=\"../signup.php\">Register</li>";
+            } elseif (isset($_SESSION['u_id'])) {
+                echo "<li style=\"padding-left:10px; padding-right:10px;\"><button class=\"btn cyan darken-4\" type=\"submit\" name=\"submit\">Logout</button></li>";
+                echo "<li><a href=\"account.php\">Account</a></li><li><a href=\"merch.php#ShoppingCart\"><i class=\"material-icons\">shopping_cart</i></a></li>";
             }
 
              ?>
